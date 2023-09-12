@@ -2,7 +2,7 @@ import { Pokemon } from '@/@types/pokemon';
 import Card from '@/components/Card';
 
 const getData = async () => {
-  const resultJson = await fetch('https://api-pokemon-fr.vercel.app/api/v1/pokemon');
+  const resultJson = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pokemon`);
   const result = await resultJson.json();
   return result as Pokemon[];
 };
